@@ -4,7 +4,7 @@ title: Clear Language (COGA Objective 3 & 5)
 category: content
 severity: mandatory
 triggers: [forms, settings, consent-dialogs, notifications, dashboards, live-feeds, animations, onboarding]
-version: "5.0"
+version: "5.1"
 status: active
 ---
 
@@ -24,7 +24,7 @@ Checkboxes and toggles in settings, consent, and subscription dialogs; confirmat
 ## Directives
 ### 🟢 DO
 * Write every setting, checkbox, and confirmation as a direct affirmative statement describing what happens when it is on: "Email me weekly updates".
-* Keep one idea per sentence; start action labels with a verb ("Save changes", "Delete file").
+* Keep one idea per sentence; for action-label mechanics such as verb-first phrasing and casing, follow the microcopy rule (see UX-VOICE-01).
 * Freeze layout during critical tasks: auto-updating blocks must not reflow or push content while the user fills a form or confirms an action. Buffer incoming items behind an explicit control ("Show 3 new updates") inside a fixed-size container.
 * Make all motion user-controllable: honor `prefers-reduced-motion`, give every carousel or auto-playing region visible pause/stop controls, and never auto-advance steps or dismiss messages on a timer the user cannot stop.
 

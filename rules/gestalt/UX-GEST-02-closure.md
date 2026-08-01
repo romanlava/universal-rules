@@ -4,7 +4,7 @@ title: Law of Closure
 category: gestalt
 severity: recommended
 triggers: [cards, forms, dashboards, settings, tables, sections]
-version: "5.0"
+version: "5.1"
 status: active
 ---
 
@@ -27,7 +27,7 @@ The brain completes missing contours on its own: consistent negative space forms
 ### 🟢 DO
 * Encode grouping with a spacing hierarchy: gap inside a group strictly smaller than the gap between groups (e.g. 8px within, 24–32px between), so the boundary is inferred.
 * Use at most one boundary device per container: whitespace, or a subtle background shift, or a border — never stacked.
-* Let section headings plus whitespace define form and settings sections; remove wrapper boxes whose only job is "framing".
+* Let section headings plus whitespace define form and settings sections; a wrapper box whose only job is "framing" is functionless decoration — delete it (see UX-ECON-03).
 * Density exception: when a table or grid exceeds the cognitive scanning threshold (~10+ columns), reintroduce ultra-thin row separators or row-hover highlight per UX-TUFTE-01 — this is functional ink, not decoration.
 
 ### 🔴 DON'T → INSTEAD

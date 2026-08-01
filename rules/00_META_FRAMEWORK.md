@@ -39,3 +39,13 @@ When rules collide, these resolutions apply:
 * **Sticky headers vs. keyboard focus (WCAG 2.4.11)**: sticky positioning requires `scroll-margin-top` on all focusable containers. See UX-A11Y-02.
 * **Optimistic UI vs. trust**: optimistic updates only for reversible, low-risk micro-interactions; destructive or financial actions always show honest system status. See UX-ROBUST-02.
 * **Von Restorff vs. accent blindness**: maximum one primary CTA per screen area. See UX-REST-01.
+* **Confirmation vs. Undo**: for reversible actions prefer no blocking dialog — soft delete plus one-click Undo (UX-CTRL-01); show a loss-naming confirmation only when the action is irreversible or the loss substantial; whenever a dialog exists, UX-KAHN-02's copy rules govern it.
+* **Constraint vs. Liberality**: constrain the *value space* where choices are finite — pickers, enums, steppers (UX-ERR-01); be liberal in *parsing* free-form input — normalize formats, never reject for formatting (UX-ROBUST-01). Constraint prevents invalid choices; liberality forgives valid-but-messy input.
+
+**Unlisted conflicts** are resolved against context, in order: (1) who the user is (novice vs. expert), (2) how often the action happens (daily → speed; rare → guidance and guards), (3) cost of error (irreversible or expensive → prevention; trivial → speed, with undo carrying the safety), (4) reversibility (cheap undo can replace a confirmation entirely). State the tradeoff being made when generating.
+
+## Ethical Gate (applies to every behavioral lever)
+Before generating any psychological lever — loss framing, endowed progress, scarcity, defaults, social proof — apply one test: *does it leave the user genuinely better off, or extract behavior against their interest?* The latter is a deceptive pattern and is never generated: no fake scarcity, fabricated urgency, fake progress, or self-serving defaults.
+
+## Resolved Format Decisions
+* Rules deliberately use Markdown sections and ONE compact ❌/✅ example instead of the research-recommended per-rule XML blocks, multi-example few-shot sets, and ASCII token schemas — high-levelness and context economy win. XML wrapping applies only at prompt-assembly time (see Two-Level Loading). Future audits should not re-flag this.

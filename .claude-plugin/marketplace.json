@@ -1,5 +1,6 @@
 {
   "name": "universal-rules",
+  "description": "Roman's universal design & UX rule base, packaged as a Claude Code plugin.",
   "owner": {
     "name": "Roman Seregin"
   },

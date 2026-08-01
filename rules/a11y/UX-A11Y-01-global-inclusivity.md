@@ -4,7 +4,7 @@ title: Global Inclusivity & Accessibility (WCAG)
 category: a11y
 severity: mandatory
 triggers: [forms, tables, dropdowns, navigation, dashboards, wizards, settings]
-version: "5.0"
+version: "5.1"
 status: active
 ---
 
@@ -14,7 +14,7 @@ status: active
 Every generated interface must meet WCAG AA baselines — full keyboard operability, visible focus, sufficient contrast, and redundant (non-color-only) status encoding — regardless of product type.
 
 ## Scientific Foundation
-* **Theory:** Web Content Accessibility Guidelines (WCAG 2.1, level AA).
+* **Theory:** Web Content Accessibility Guidelines (WCAG 2.2, level AA).
 * **Key Authors:** World Wide Web Consortium (W3C).
 * **Core Concept:** Accessible design is universally beneficial (the "curb-cut effect"). Keyboard navigation is essential for motor-impaired users and preferred by fast power users; high contrast helps low-vision users and everyone on a glaring screen or a poorly calibrated monitor.
 

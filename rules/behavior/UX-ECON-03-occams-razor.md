@@ -4,14 +4,14 @@ title: Occam's Razor
 category: behavior
 severity: mandatory
 triggers: [forms, dashboards, cards, modals, landing-sections, component-composition, code-generation]
-version: "5.0"
+version: "5.1"
 status: active
 ---
 
 # [UX-ECON-03] Occam's Razor
 
 ## Summary
-Among functionally equivalent solutions, always generate the simplest one. Before final output, audit every generated DOM node and remove any element that carries no functional or informational load — this is the framework's anti-over-engineering self-check.
+Among functionally equivalent solutions, always generate the simplest one. Before final output, audit every generated node and delete any element carrying no functional or informational load. This is the framework's canonical minimalism rule: the single home of the subtraction pass, which other rules reference instead of restating.
 
 ## Scientific Foundation
 * **Theory:** Occam's Razor (law of parsimony), adapted to interface design.

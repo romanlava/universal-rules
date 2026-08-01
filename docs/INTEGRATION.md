@@ -3,10 +3,16 @@
 Three options, from recommended to exotic. In every case only `INDEX.md` enters the
 project's context; the AI reads full rules on demand.
 
+> **Private repository.** `github.com/romanlava/universal-rules` is private. Every
+> option below therefore requires read access to it: on your own machine the `gh` /
+> git credential helper covers this; on CI or teammates' machines use an SSH deploy
+> key or an HTTPS personal access token. Without access, submodule clone and
+> marketplace add both fail.
+
 ## Option A — Git submodule (recommended)
 
 A versioned link: the project pins a specific commit of the rule base,
-updates are explicit and reversible. Works in CI and on any machine.
+updates are explicit and reversible. Works anywhere that has read access to the repo.
 
 Setup (CRM example):
 
@@ -31,7 +37,8 @@ git submodule update --remote design-rules
 git add design-rules && git commit -m "chore: bump design rules"
 ```
 
-Cloning the project on a new machine: `git clone --recurse-submodules <crm-url>`.
+Cloning the project on a new machine: `git clone --recurse-submodules <crm-url>`
+(or `git submodule update --init` after a plain clone).
 
 **Pros:** the rules version is pinned in project history; can roll back; CI sees the rules.
 **Cons:** the usual submodule routine (remember `--recurse-submodules`).
@@ -44,10 +51,25 @@ In the project's `CLAUDE.md`:
 
 ```markdown
 ## Design & UX Rules
-@~/Projects/Universal Rules/INDEX.md
+@~/Projects/Universal\ Rules/INDEX.md
 Before generating or reviewing any UI: match the task against the index triggers
 and read the full versions of matching rules from ~/Projects/Universal Rules/rules/.
 ```
+
+Two caveats:
+
+* **Spaces in the path break @import silently** — escape them (`Universal\ Rules`) or,
+  more robustly, create a space-free symlink once and import through it:
+
+  ```bash
+  ln -s ~/Projects/Universal\ Rules ~/.claude/universal-rules
+  ```
+
+  then use `@~/.claude/universal-rules/INDEX.md`.
+* Because the import points outside the project directory, Claude Code shows a
+  one-time approval dialog per project; if declined, the import stays silently
+  disabled. Verify with `/context` (look under "Memory files") that INDEX.md
+  actually loaded.
 
 **Pros:** zero setup, edits to the base are visible in all projects instantly.
 **Cons:** does not work for teammates/CI (local path); no version pinning —
@@ -62,11 +84,21 @@ The repository already contains `.claude-plugin/` (manifest + marketplace) and t
 claude plugin marketplace add romanlava/universal-rules
 ```
 
-then `/plugin install universal-design-rules` in an interactive session.
-The skill auto-activates on UI tasks in every project.
+then `/plugin install universal-design-rules@universal-rules` in an interactive
+session. The skill auto-activates on UI tasks in every project.
+
+Notes:
+
+* Add the marketplace via `owner/repo` or a git URL (not a raw URL to
+  marketplace.json — relative `"source": "./"` does not resolve for URL-only
+  marketplaces).
+* **Updates are keyed to the `version` field in `.claude-plugin/plugin.json`** —
+  installed copies are cached per version, so users only receive changes after that
+  version is bumped. To pull an update: `/plugin marketplace update universal-rules`,
+  then `claude plugin update universal-design-rules`.
 
 **Pros:** the most native way for Claude Code; the skill knows when to engage.
-**Cons:** updates go through plugin update/reinstall; slightly more moving parts.
+**Cons:** updates require a version bump + plugin update; slightly more moving parts.
 
 ## Which to choose
 
@@ -75,6 +107,14 @@ The skill auto-activates on UI tasks in every project.
 * Many projects and you want auto-activation without editing each CLAUDE.md → **C**.
 
 The options are compatible: start with B and move to A later without changing the base.
+
+## Release checklist (maintainer)
+
+1. Edit rules → update CHANGELOG.md (SemVer).
+2. Bump `version` in `.claude-plugin/plugin.json` in lockstep.
+3. Commit + push.
+4. In consuming projects: `git submodule update --remote design-rules` (Option A) or
+   plugin update (Option C); Option B needs nothing.
 
 ## Separation rule
 

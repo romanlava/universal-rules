@@ -4,14 +4,14 @@ title: Content Design & Microcopy
 category: content
 severity: mandatory
 triggers: [forms, buttons, labels, error-messages, empty-states, navigation, onboarding, mockups]
-version: "5.0"
+version: "5.1"
 status: active
 ---
 
 # [UX-VOICE-01] Content Design & Microcopy
 
 ## Summary
-Every generated interface ships with production-grade text: realistic content instead of placeholder gibberish, sentence case for forms and buttons, plain language instead of professional jargon, and one consistent name per object across all screens.
+Every generated interface ships with production-grade text: realistic content instead of placeholder gibberish, sentence case for forms and buttons, verb-first action labels, plain language instead of professional jargon, and one consistent name per object across all screens.
 
 ## Scientific Foundation
 * **Theory:** Content design and UX writing practice; plain-language research on reading comprehension and scanning behavior.
@@ -25,6 +25,7 @@ Any generated copy: field labels, buttons, headings, menu items, empty states, e
 ### 🟢 DO
 * Generate realistic, domain-plausible text everywhere: real labels, plausible names, and values in their true expected formats and lengths, so layout is validated against production-like content.
 * Use sentence case for all labels, buttons, headings, and menu items: capitalize only the first word and proper nouns ("Save changes", "Payment method").
+* Start every action label with a verb naming the outcome ("Save changes", "Send invites", "Delete file").
 * Write in the user's vocabulary: describe visible objects and outcomes in plain words; error text states what happened and what to do next.
 * Keep one term per object: choose a single name for each concept and reuse it verbatim in navigation, buttons, empty states, errors, and confirmations.
 

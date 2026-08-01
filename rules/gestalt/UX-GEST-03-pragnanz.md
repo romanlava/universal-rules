@@ -4,7 +4,7 @@ title: Law of Prägnanz
 category: gestalt
 severity: recommended
 triggers: [layouts, dashboards, cards, modals, landing-sections, navigation]
-version: "5.0"
+version: "5.1"
 status: active
 ---
 
@@ -27,7 +27,7 @@ Ambiguous compositions are always perceived in their simplest, least effortful f
 ### 🟢 DO
 * Build every screen on a simple, predictable grid skeleton: aligned columns, straight edges, regular rhythm — the layout a user would guess before seeing it.
 * Give every visual layer a function before rendering it: shadow = interactive elevation (dropdown, modal, dragged item); background shift = grouping; z-index = temporal stacking. No function → flat.
-* Prefer the composition with the fewest distinct regions and alignment axes among equally informative alternatives (Occam's razor applied to DOM structure).
+* Layers that fail the function test are functionless decoration — delete them via the canonical subtraction pass (see UX-ECON-03).
 * Keep shapes canonical: rectangles, one system radius, one accent geometry — so silhouettes resolve instantly.
 
 ### 🔴 DON'T → INSTEAD

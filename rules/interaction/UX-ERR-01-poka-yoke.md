@@ -4,7 +4,7 @@ title: Poka-Yoke (Error Prevention & Standardized Error Feedback)
 category: interaction
 severity: mandatory
 triggers: [forms, wizards, settings, checkout, configuration-panels, data-entry, destructive-actions]
-version: "5.0"
+version: "5.1"
 status: active
 ---
 
@@ -25,15 +25,14 @@ Any form or data-entry field with a known valid format (dates, emails, numeric r
 ### 🟢 DO
 * Maximize input constraints: replace free-text with dropdowns, radio groups, steppers, date pickers, or masked inputs whenever the valid value space is enumerable.
 * Validate inline as the user completes each field; block submission while known-invalid data exists and explain what to fix.
-* Render error text directly adjacent to the offending field (spatial locality), never only in a distant summary.
-* Standardize error feedback: icon + text (never color alone), text contrast ≥ 4.5:1 against its background, and programmatic association (`aria-describedby`) with the field.
+* Report each remaining error adjacent to its field, never only in a distant summary (see UX-LOC-01), as accessible icon-plus-text feedback with sufficient contrast and programmatic association (see UX-A11Y-01).
 * For destructive actions, require an explicit confirming step scaled to the risk (confirm button, typed confirmation for irreversible bulk deletes).
 * Disable or hide actions that are invalid in the current state, with a hint explaining why.
 
 ### 🔴 DON'T → INSTEAD
 * **Don't:** offer a free-text field for data with a strict format (date, code, enumerated option). **Instead:** use a picker, dropdown, or input mask that makes malformed input impossible.
 * **Don't:** let the user submit a form the system already knows is invalid. **Instead:** validate before submission, keep the submit action gated, and point to each failing field.
-* **Don't:** signal errors with color only (a red border alone) or a lone toast far from the field. **Instead:** show an icon plus a concrete message next to the field, at ≥ 4.5:1 contrast.
+* **Don't:** signal errors with color only or a lone toast far from the field. **Instead:** show an icon plus a concrete message next to the field (see UX-LOC-01), in accessible multi-channel form (see UX-A11Y-01).
 * **Don't:** report failures after the fact with generic text ("Something went wrong"). **Instead:** state what is wrong, where, and the exact corrective action ("Date must be in the future").
 
 ## Example

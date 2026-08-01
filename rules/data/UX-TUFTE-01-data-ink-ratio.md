@@ -4,7 +4,7 @@ title: Maximizing Data-Ink Ratio
 category: data
 severity: recommended
 triggers: [tables, dashboards, lists, reports, analytics, metrics]
-version: "5.0"
+version: "5.1"
 status: active
 ---
 
@@ -31,7 +31,7 @@ Metric tables, event lists, dashboards, analytical summaries, reports, compariso
 ### 🔴 DON'T → INSTEAD
 * **Don't:** apply aggressive zebra striping or thick grid lines that compete with the numbers. **Instead:** default to no fills and no borders; if row tracking fails in a 10+ column table, add hairline separators or hover highlight only.
 * **Don't:** repeat the unit, currency symbol, or icon in every cell of a column. **Instead:** state the unit once in the column header ("Revenue, $") and keep cells as bare values.
-* **Don't:** wrap every metric card or cell in decorative boxes, shadows, and background tints. **Instead:** separate groups with whitespace and a single subtle divider between sections.
+* **Don't:** dress metric cards or cells in decorative non-data ink (boxes, shadows, tints). **Instead:** apply the canonical subtraction pass (see UX-ECON-03) and let whitespace do the grouping.
 * **Don't:** delete separators purely for aesthetics when users must trace long rows. **Instead:** treat the ~10-column mark as the switch point and restore the thinnest possible row guide.
 
 ## Example

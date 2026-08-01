@@ -4,7 +4,7 @@ title: Von Restorff Effect (Isolation)
 category: gestalt
 severity: mandatory
 triggers: [buttons, forms, checkout, dashboards, toolbars, empty-states, modals]
-version: "5.0"
+version: "5.1"
 status: active
 ---
 
@@ -28,7 +28,7 @@ An element stands out only when it is the sole deviation in its field: maximum O
 * Render exactly one primary CTA (filled, high-contrast accent) per screen area — the single action that advances the user's main goal.
 * Express secondary actions as outlined or ghost buttons in muted colors; tertiary actions as plain text links or lighter font weight.
 * Keep the surrounding field visually calm (neutral colors, uniform styling) so the one accent has contrast to stand against.
-* Demote overflow actions (duplicate, archive, export) into a standard "more actions" menu instead of granting each its own accent.
+* Long-tail actions live in the single overflow menu (see UX-MILL-01) rather than each carrying its own accent.
 * Apply the same discipline to non-button emphasis: one highlighted metric, one featured card, one badge color per area.
 
 ### 🔴 DON'T → INSTEAD

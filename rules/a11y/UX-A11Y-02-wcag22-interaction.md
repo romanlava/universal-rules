@@ -4,17 +4,17 @@ title: WCAG 2.2 Interaction Criteria
 category: a11y
 severity: mandatory
 triggers: [forms, checkout, wizards, drag-and-drop, sticky-headers, dense-tables, navigation, help-links]
-version: "5.0"
+version: "5.1"
 status: active
 ---
 
 # [UX-A11Y-02] WCAG 2.2 Interaction Criteria
 
 ## Summary
-Enforces four WCAG 2.2 success criteria at generation time: no redundant data entry, a single-click alternative for every drag, keyboard focus never hidden under sticky content, and help located in the same place on every page.
+Enforces four WCAG 2.2 success criteria at generation time: no redundant data entry, a single-click alternative for every drag, keyboard focus never hidden under sticky content, and help located in the same place on every page. Canonical rule for redundant entry: never re-ask for data already provided — prefill it or offer a same-as-previous control.
 
 ## Scientific Foundation
-* **Theory:** WCAG 2.2 (W3C Recommendation) — SC 3.3.7 Redundant Entry, SC 2.5.7 Dragging Movements, SC 2.4.11 Focus Not Obscured, SC 3.2.6 Consistent Help.
+* **Theory:** WCAG 2.2 (W3C Recommendation) — SC 3.3.7 Redundant Entry, SC 2.5.7 Dragging Movements, SC 2.4.11 Focus Not Obscured (Minimum), SC 3.2.6 Consistent Help.
 * **Key Authors:** W3C Accessibility Guidelines Working Group; W3C COGA Task Force.
 * **Core Concept:** Interaction cost is unequal across users. Re-typing known data, precise dragging, focus hidden behind floating layers, and help that moves between pages are minor friction for some users but hard blockers for people with motor, memory, and cognitive impairments. These criteria convert that friction into structural guarantees in the generated DOM.
 
@@ -23,9 +23,9 @@ Multi-step forms and wizards that request the same data twice (shipping/billing,
 
 ## Directives
 ### 🟢 DO
-* Prefill any value the user already entered in the same process, or provide an explicit "same as previous" checkbox/selector (SC 3.3.7). The only exception: security-critical re-entry such as passwords and verification codes.
+* Prefill any value the user already entered in the same process, or provide an explicit "same as previous" checkbox/selector (SC 3.3.7). Exceptions: re-entry that is essential for security (e.g. password confirmation) or data that is no longer valid.
 * Pair every drag interaction with a single-pointer equivalent: up/down buttons for reordering, a "Move to…" menu, click-to-select then click-to-place, or a numeric input beside a slider (SC 2.5.7).
-* Whenever a sticky/fixed element overlays scrollable content, set `scroll-margin-top` (and `scroll-padding-top` on the scroll container) at least equal to the sticky element's height on all focusable elements, so keyboard focus always scrolls into unobscured view (SC 2.4.11).
+* Whenever a sticky/fixed element overlays scrollable content, set `scroll-margin-top` (and `scroll-padding-top` on the scroll container) at least equal to the sticky element's height on all focusable elements, so keyboard focus always scrolls into fully visible view. This full-visibility requirement is a deliberate above-AA standard: SC 2.4.11 Focus Not Obscured (Minimum) at level AA only forbids the focused element being entirely hidden.
 * Render the help entry point (help link, contact, FAQ, chat trigger) in the identical position and relative order in the persistent layout shell on every page (SC 3.2.6).
 
 ### 🔴 DON'T → INSTEAD

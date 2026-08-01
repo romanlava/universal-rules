@@ -4,7 +4,7 @@ title: Progressive Disclosure
 category: cognition
 severity: mandatory
 triggers: [settings, configurators, dashboards, filters, forms, wizards, advanced-options]
-version: "5.0"
+version: "5.1"
 status: active
 ---
 
@@ -15,7 +15,7 @@ Show only the most relevant controls and data by default; defer advanced or seco
 
 ## Scientific Foundation
 * **Theory:** Progressive Disclosure.
-* **Key Authors:** John M. Carroll, Don Norman.
+* **Key Authors:** John M. Carroll (minimalist instruction / training-wheels interface, 1984); Jakob Nielsen (canonical UX formulation of progressive disclosure).
 * **Core Concept:** Deferring advanced features reduces initial cognitive load for novice, fast-path use (System 1) while still accommodating power users (System 2) who explicitly request depth. Every visible control is a cost paid by every user on every visit.
 
 ## Triggers

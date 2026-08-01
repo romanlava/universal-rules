@@ -4,7 +4,7 @@ title: Tesler's Law (Conservation of Complexity)
 category: robustness
 severity: mandatory
 triggers: [forms, wizards, settings, onboarding, checkout, import, configuration]
-version: "5.0"
+version: "5.1"
 status: active
 ---
 
@@ -27,13 +27,12 @@ Every process carries an irreducible amount of complexity that cannot be removed
 ### 🟢 DO
 * Ship smart defaults: preselect the most probable option, prefill known values (locale, units, dates, previously entered data), and let the user change rather than choose.
 * Parse pasted composite input automatically: split a pasted full address, full name, or ID string into its target fields; extract structure from free text instead of demanding field-by-field entry.
-* Derive everything derivable: compute totals, look up values from an entered code or identifier, infer dependent fields, reuse data already provided in the same flow.
+* Derive everything derivable: compute totals, look up values from an entered code or identifier, infer dependent fields.
 * Ask the user only for what the system genuinely cannot know or derive — and phrase that as the small residue it is.
-* Offer "same as previous" shortcuts (e.g. copy one entered data block into a matching one) via a single checkbox.
+* Never re-ask for data already provided in the same flow — prefill it or offer a same-as-previous control (see UX-A11Y-02).
 
 ### 🔴 DON'T → INSTEAD
 * **Don't:** present a wall of empty fields when most values are known, derivable, or predictable. **Instead:** prefill with smart defaults and reduce the visible ask to the few fields only the user can answer.
-* **Don't:** force manual re-entry of data already provided earlier in the same process. **Instead:** carry the data forward automatically and offer a one-click "copy from previous" toggle for near-duplicates.
 * **Don't:** reject or ignore pasted composite input and demand the user distribute it across fields by hand. **Instead:** parse the pasted string client-side, populate the target fields, and let the user verify and correct.
 
 ## Example

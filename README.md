@@ -53,3 +53,6 @@ Edits happen only here → commit → in consuming projects `git submodule updat
 * Rule IDs are immutable; an outdated rule gets `status: deprecated`, never deleted.
 * Versioning: SemVer in [CHANGELOG.md](CHANGELOG.md). Major — format/structure changes,
   minor — new rules, patch — text fixes.
+* On every release, bump `version` in `.claude-plugin/plugin.json` in lockstep —
+  plugin users only receive updates when it changes. Full release checklist in
+  [docs/INTEGRATION.md](docs/INTEGRATION.md).
