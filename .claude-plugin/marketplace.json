@@ -1,0 +1,13 @@
+{
+  "name": "universal-rules",
+  "owner": {
+    "name": "Roman Seregin"
+  },
+  "plugins": [
+    {
+      "name": "universal-design-rules",
+      "source": "./",
+      "description": "Universal UX/UI architecture rules for AI-assisted design and development."
+    }
+  ]
+}
