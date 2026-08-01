@@ -29,7 +29,7 @@ Every rule file MUST follow `_TEMPLATE.md`:
 7. **Self-Reflection** — one checklist question for the AI's internal validation loop before final output.
 
 ## Style Constraints
-* Rules are written in English (denser and less ambiguous for LLM consumption). Human-facing docs (README, integration guide) are in Russian.
+* The entire system — rules, index, and human-facing docs — is written in English (denser and less ambiguous for LLM consumption, portable across teams).
 * Target length: under ~70 lines per rule. High-level and universal beats exhaustive and specific.
 * Rule IDs are immutable. Superseded rules get `status: deprecated`, never deleted or renumbered.
 
