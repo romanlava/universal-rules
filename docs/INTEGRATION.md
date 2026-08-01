@@ -12,7 +12,7 @@
 
 ```bash
 cd ~/Projects/CRM
-git submodule add <URL-этого-репозитория> design-rules
+git submodule add https://github.com/romanlava/universal-rules.git design-rules
 ```
 
 В `CLAUDE.md` проекта добавить блок:
@@ -59,7 +59,7 @@ git add design-rules && git commit -m "chore: bump design rules"
 `ux-architect`. Установка:
 
 ```bash
-claude plugin marketplace add <URL-этого-репозитория>
+claude plugin marketplace add romanlava/universal-rules
 ```
 
 затем `/plugin install universal-design-rules` в интерактивной сессии.
