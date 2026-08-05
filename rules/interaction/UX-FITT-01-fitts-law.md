@@ -4,7 +4,7 @@ title: Fitts's Law (Target Size & Reachability)
 category: interaction
 severity: mandatory
 triggers: [buttons, touch-targets, icon-buttons, toolbars, navigation, mobile, destructive-actions, row-actions]
-version: "5.1"
+version: "5.3"
 status: active
 ---
 
@@ -26,7 +26,7 @@ Any clickable or tappable element: buttons, icon-only controls, links, checkboxe
 * Give every touch target a minimum hit area of ~44×44 CSS px; pointer-only targets at least 24×24 px, with visible spacing between adjacent targets.
 * Extend the hit area beyond the visual glyph: a 16 px icon gets an invisible padded click zone meeting the minimum, not a 16 px hotspot.
 * Scale target size and prominence with frequency and importance — the most-used action on a screen is the easiest one to hit.
-* Place primary actions within natural thumb reach on mobile (lower screen zone), not in hard-to-reach corners.
+* Place primary actions within natural thumb reach on mobile (lower screen zone), not in hard-to-reach corners; these minimums survive reflow — a stacked narrow layout may not shrink targets to fit (see UX-RESP-01).
 * Separate destructive actions from high-frequency targets by distance or an intermediate step — never directly adjacent (see UX-ERR-01).
 
 ### 🔴 DON'T → INSTEAD

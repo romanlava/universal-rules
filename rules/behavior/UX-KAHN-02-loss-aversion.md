@@ -4,7 +4,7 @@ title: Loss Aversion (Protect Invested Effort)
 category: behavior
 severity: mandatory
 triggers: [destructive-actions, unsaved-changes, cancellations, downgrades, forms, settings, checkout]
-version: "5.0"
+version: "5.3"
 status: active
 ---
 
@@ -24,6 +24,7 @@ Delete/remove confirmations, closing a form or wizard with unsaved changes, subs
 ## Directives
 ### 🟢 DO
 * Frame destructive-action copy around the concrete loss: "Discard this draft? You'll lose 20 minutes of unsaved edits."
+* For reversible actions, prefer soft delete plus one-click Undo over a blocking dialog (see UX-CTRL-01); apply the loss-naming copy rules below whenever a dialog is genuinely warranted.
 * Intercept exits from forms with unsaved data and offer the protective path first ("Save draft" / "Keep editing") alongside an honest "Discard".
 * On downgrades or cancellations, list factually which features or data become unavailable, then let the user proceed with one clear click.
 * Keep the tone objective: state facts about what is lost, not judgments about the user's choice.

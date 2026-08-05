@@ -4,14 +4,14 @@ title: Parkinson's Law
 category: behavior
 severity: mandatory
 triggers: [text-blocks, forms, dense-tables, dashboards, responsive-layouts, wide-screens, modals]
-version: "5.2"
+version: "5.3"
 status: active
 ---
 
 # [UX-ECON-04] Parkinson's Law
 
 ## Summary
-Work — and interface elements — expand to fill the space available. Every text block and data container must carry an explicit max-width constraint (45–75 characters per line for reading text) so ultra-wide viewports cannot stretch content and destroy typographic hierarchy.
+Work — and interface elements — expand to fill the space available. Every text block and data container must carry an explicit max-width constraint (45–75 characters per line for reading text) so ultra-wide viewports cannot stretch content and destroy typographic hierarchy. This rule governs the wide end of the viewport range; reflow at the narrow end is UX-RESP-01.
 
 ## Scientific Foundation
 * **Theory:** Parkinson's Law, applied spatially to layout; typographic line-length research.

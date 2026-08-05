@@ -4,7 +4,7 @@ title: Peak-End Rule (Design the Ending)
 category: behavior
 severity: recommended
 triggers: [wizards, checkout, onboarding, forms, confirmations, errors, empty-search, flow-completion]
-version: "5.1"
+version: "5.3"
 status: active
 ---
 
@@ -26,7 +26,7 @@ The final step of any multi-step flow (checkout, signup, wizard, form submission
 * Terminate every flow in a designed end state: a success confirmation that summarizes the outcome ("what just happened, what was created/changed") and offers one clear next action.
 * Make the final step the cheapest in the flow — least input, least thought, fastest response (see UX-ECON-01).
 * Give the likely negative peak (error, failure, empty result) the most careful design in the flow: recovery path, preserved input, honest explanation (see UX-ERR-01) and an always-available exit (see UX-CTRL-01).
-* Treat an empty search or filter result as a designed moment: state why it is empty and offer a concrete adjustment or alternative.
+* Treat an empty search or filter result as a designed moment: state why it is empty and offer a concrete adjustment or alternative (see UX-STATE-01).
 * After completion, land the user somewhere purposeful — the created object, an updated list, or a relevant next step.
 
 ### 🔴 DON'T → INSTEAD

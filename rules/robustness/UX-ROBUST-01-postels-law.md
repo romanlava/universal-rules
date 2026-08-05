@@ -4,14 +4,14 @@ title: Postel's Law (Robustness Principle)
 category: robustness
 severity: mandatory
 triggers: [forms, inputs, validation, checkout, search, settings, import]
-version: "5.0"
+version: "5.3"
 status: active
 ---
 
 # [UX-ROBUST-01] Postel's Law (Robustness Principle)
 
 ## Summary
-Be liberal in what the interface accepts and strict in what it emits: normalize imperfect user input client-side and send clean, structured data to the backend. Validation errors are reserved for genuine logic violations, never for formatting the system could fix itself.
+Be liberal in what the interface accepts and strict in what it emits: normalize imperfect user input client-side and send clean, structured data to the backend. Validation errors are reserved for genuine logic violations, never for formatting the system could fix itself. This liberality governs the parsing of free-form input — the choice space itself stays constrained wherever valid values are finite and enumerable (see UX-ERR-01).
 
 ## Scientific Foundation
 * **Theory:** Robustness Principle ("be conservative in what you send, be liberal in what you accept"), transferred from protocol design to human–computer interaction.
@@ -25,6 +25,7 @@ Be liberal in what the interface accepts and strict in what it emits: normalize 
 
 ## Directives
 ### 🟢 DO
+* Apply this rule to parsing, not to the choice space: where the valid values are finite and enumerable, constrain the control itself (see UX-ERR-01). A date field may therefore use a picker, and every date typed into it must still be parsed and normalized rather than rejected for its format.
 * Normalize on input: `trim()` whitespace, strip spaces/dashes/parentheses from phone and card numbers, unify case where case is not meaningful, accept common date and decimal-separator variants.
 * Treat paste as the primary path: sanitize pasted values (invisible characters, formatting artifacts) before validating them.
 * Emit strictly: after normalization, send one canonical machine format (e.g. digits-only string, ISO date) to the backend.
@@ -34,6 +35,7 @@ Be liberal in what the interface accepts and strict in what it emits: normalize 
 ### 🔴 DON'T → INSTEAD
 * **Don't:** reject input for formatting the client can repair (spaces in a card number, dashes in a phone, trailing whitespace in an email). **Instead:** silently normalize the value, display the cleaned/formatted version, and validate only the normalized result.
 * **Don't:** enforce one rigid entry format via error messages ("Enter date as YYYY-MM-DD"). **Instead:** accept common variants, parse them into the canonical format, and echo the interpreted value back to the user.
+* **Don't:** treat liberal parsing as a reason to leave an enumerable choice as free text (status, region, currency, category). **Instead:** constrain that control to its finite value set (see UX-ERR-01) and reserve normalization for input that is genuinely open-ended.
 * **Don't:** forward raw, unnormalized user strings to the backend and let server errors surface as validation feedback. **Instead:** construct a strict, canonical payload client-side so the server receives only well-formed data.
 
 ## Example
@@ -41,4 +43,4 @@ Be liberal in what the interface accepts and strict in what it emits: normalize 
 ✅ `input: "4111 1111 1111 1111" → normalized: "4111111111111111" → checksum ok → submit; error only if digits are genuinely invalid`
 
 ## Self-Reflection
-* "Could any validation error I emit be eliminated by normalizing the input first — and does every rejected case represent a true logic violation rather than a formatting preference?"
+* "Could any validation error I emit be eliminated by normalizing the input first — does every rejected case represent a true logic violation rather than a formatting preference, and is every field with a finite value set a constrained control rather than free text?"

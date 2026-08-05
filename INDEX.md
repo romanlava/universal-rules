@@ -8,15 +8,15 @@ Format spec and conflict resolutions live in [rules/00_META_FRAMEWORK.md](rules/
 | Rule | Apply when |
 |---|---|
 | [UX-LOAD-01](rules/cognition/UX-LOAD-01-cognitive-load.md) — Cognitive Load | Any flow, form, wizard, dashboard, settings, or checkout — decompose intrinsic complexity into steps, strip extraneous noise, keep feedback patterns absolutely consistent so primary paths run on System 1 |
-| [UX-MEM-01](rules/cognition/UX-MEM-01-context-retention.md) — Context Retention | Scrolling tables, lists, dashboards, comparison views — keep column headers, row keys, and section titles visible so users recognize on sight instead of recalling |
-| [UX-MILL-01](rules/cognition/UX-MILL-01-choice-management.md) — Choice Management | Navigation, menus, toolbars, filters, settings, action menus — cap each visual level at 5–7 options, rank by frequency of use, demote the long tail to one overflow, put highest-value items first/last |
+| [UX-MEM-01](rules/cognition/UX-MEM-01-context-retention.md) — Context Retention | Scrolling tables, lists, dashboards, comparison views, multi-step flows — keep column headers, row keys, and section titles visible, and redisplay values entered earlier at the later step that depends on them, so users recognize on sight instead of recalling |
+| [UX-MILL-01](rules/cognition/UX-MILL-01-choice-management.md) — Choice Management | Navigation, menus, toolbars, filters, settings, action menus, multi-region layouts — cap each visual level at 5–7 options, rank prominence *and* layout space by frequency of use, demote the long tail to one overflow, put highest-value items first/last |
 | [UX-PROG-01](rules/cognition/UX-PROG-01-progressive-disclosure.md) — Progressive Disclosure | Settings, configurators, filters, advanced options — show only primary-task controls by default, defer advanced/secondary options to explicitly requested secondary views |
 
 ### Behavior
 
 | Rule | Apply when |
 |---|---|
-| [UX-ECON-01](rules/behavior/UX-ECON-01-goal-gradient.md) — Progress Motivation | Multi-step flows with progress (checkout, wizards, onboarding, checklists, profile setup) — credit genuine pre-endowed progress at the start, shrink effort and accent the finish near the end |
+| [UX-ECON-01](rules/behavior/UX-ECON-01-goal-gradient.md) — Progress Motivation | Any multi-step flow (checkout, wizards, onboarding, checklists, profile setup), with or without an existing progress indicator — render one, credit genuine pre-endowed progress at the start, shrink effort and accent the finish near the end |
 | [UX-ECON-03](rules/behavior/UX-ECON-03-occams-razor.md) — Occam's Razor | Any composition (forms, cards, modals, dashboards, landing sections) — generate the simplest equivalent solution and run the canonical subtraction pass deleting every element without functional or informational load |
 | [UX-ECON-04](rules/behavior/UX-ECON-04-parkinsons-law.md) — Parkinson's Law | Text blocks, dense tables, responsive/wide-screen layouts — give every text block and data container an explicit max-width (45–75ch for reading text) so wide viewports cannot stretch content |
 | [UX-KAHN-02](rules/behavior/UX-KAHN-02-loss-aversion.md) — Loss Aversion | Destructive actions, unsaved changes, cancellations, downgrades — confirmation copy states concretely what will be lost, to inform and protect, never to pressure |
@@ -39,10 +39,11 @@ Format spec and conflict resolutions live in [rules/00_META_FRAMEWORK.md](rules/
 |---|---|
 | [UX-CTRL-01](rules/interaction/UX-CTRL-01-emergency-exit.md) — Emergency Exit | Destructive actions, wizards, modals, bulk operations — every state offers a clearly marked exit and destructive actions are reversible in a single step |
 | [UX-EFF-01](rules/interaction/UX-EFF-01-efficiency-accelerators.md) — Expert Accelerators | Dense tables, admin panels, approval workflows, repetitive tasks — add bulk actions, keyboard shortcuts, one-click copy, saved presets; repetition count is a design defect |
-| [UX-ERR-01](rules/interaction/UX-ERR-01-poka-yoke.md) — Poka-Yoke | Forms, data entry, config panels, destructive actions — constrain inputs so invalid states cannot be entered; validate before submit and report each error adjacent to its field |
+| [UX-ERR-01](rules/interaction/UX-ERR-01-poka-yoke.md) — Poka-Yoke | Forms, data entry, config panels, destructive actions — constrain inputs where the value space is finite so invalid states cannot be entered; keep the submit enabled, block it on activation, and report each error adjacent to its field |
 | [UX-FITT-01](rules/interaction/UX-FITT-01-fitts-law.md) — Fitts's Law | Buttons, touch targets, icon buttons, toolbars, mobile, row actions — make every target large enough, close enough, and safely separated from neighbors (especially destructive ones) |
 | [UX-JAKOB-01](rules/interaction/UX-JAKOB-01-jakobs-law.md) — Jakob's Law | Navigation, forms, tables, checkout, onboarding structure — reuse interaction patterns users already know; structural novelty is a cost, not a feature |
 | [UX-LOC-01](rules/interaction/UX-LOC-01-spatial-locality.md) — Spatial Locality | Inline editing, row actions, feedback messages — place controls and feedback in immediate physical proximity to the object they act on |
+| [UX-RESP-01](rules/interaction/UX-RESP-01-responsive-reflow.md) — Responsive Reflow | Any multi-column layout, dashboard, table-bearing view, nav, toolbar, form, modal, or side panel that may be seen on a small screen, in a narrow pane, or at high zoom — reflow to one column with no two-dimensional page scrolling, keeping every action and datum reachable |
 | [UX-STAT-01](rules/interaction/UX-STAT-01-system-status.md) — System Status | Async operations, uploads, background jobs, loading states — feedback content says what is running, which stage, and when it completed (timing budgets live in UX-ROBUST-02) |
 | [UX-STATE-01](rules/interaction/UX-STATE-01-state-completeness.md) — State Completeness | Every data-bearing view (tables, lists, search, dashboards, data fetching) — ship all states: empty/first-use, loading, error, partial/degraded, success, and overflow |
 
@@ -64,7 +65,7 @@ Format spec and conflict resolutions live in [rules/00_META_FRAMEWORK.md](rules/
 
 | Rule | Apply when |
 |---|---|
-| [UX-A11Y-01](rules/a11y/UX-A11Y-01-global-inclusivity.md) — WCAG Baseline | Every generated interface (forms, tables, nav, dashboards, wizards) — WCAG AA baseline: full keyboard operability, visible focus, sufficient contrast, non-color-only status encoding |
+| [UX-A11Y-01](rules/a11y/UX-A11Y-01-global-inclusivity.md) — WCAG Core Subset | Every generated interface (forms, tables, nav, dashboards, wizards) — the highest-frequency WCAG criteria, not full AA conformance: keyboard operability, visible focus, sufficient contrast, non-color-only status, associated labels, real semantic structure, `autocomplete` input purpose |
 | [UX-A11Y-02](rules/a11y/UX-A11Y-02-wcag22-interaction.md) — WCAG 2.2 Interaction | Forms, checkout, drag-and-drop, sticky headers, help links — never re-ask known data (prefill or same-as-previous), single-click alternative for every drag, focus never hidden under sticky content, help in the same place on every page |
 
 ### Content

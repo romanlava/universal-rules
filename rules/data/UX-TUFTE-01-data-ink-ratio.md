@@ -4,7 +4,7 @@ title: Maximizing Data-Ink Ratio
 category: data
 severity: recommended
 triggers: [tables, dashboards, lists, reports, analytics, metrics]
-version: "5.1"
+version: "5.3"
 status: active
 ---
 
@@ -26,7 +26,7 @@ Metric tables, event lists, dashboards, analytical summaries, reports, compariso
 * Consolidate units of measurement (currency symbols, %, ms) into column headers instead of repeating them in every row.
 * Use whitespace and alignment for grouping; let the data itself form the visual structure.
 * Right-align numeric columns with tabular figures so magnitudes can be compared by eye.
-* **Density exception:** when a table is very dense (roughly 10+ columns), reintroduce ultra-thin (1px, low-contrast) row separators or a row-hover highlight so the eye can track a row across the full width. Scanability outranks minimalism at this threshold.
+* **Density exception:** when a table is very dense (roughly 10+ columns), reintroduce ultra-thin (1px, low-contrast) row separators or a row-hover highlight so the eye can track a row across the full width. Scanability outranks minimalism at this threshold. This governs the ink of a table shown in full; how the same table survives a narrow viewport is UX-RESP-01.
 
 ### 🔴 DON'T → INSTEAD
 * **Don't:** apply aggressive zebra striping or thick grid lines that compete with the numbers. **Instead:** default to no fills and no borders; if row tracking fails in a 10+ column table, add hairline separators or hover highlight only.

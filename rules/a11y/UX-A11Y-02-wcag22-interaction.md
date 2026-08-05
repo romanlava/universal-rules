@@ -4,7 +4,7 @@ title: WCAG 2.2 Interaction Criteria
 category: a11y
 severity: mandatory
 triggers: [forms, checkout, wizards, drag-and-drop, sticky-headers, dense-tables, navigation, help-links]
-version: "5.1"
+version: "5.3"
 status: active
 ---
 
@@ -23,10 +23,10 @@ Multi-step forms and wizards that request the same data twice (shipping/billing,
 
 ## Directives
 ### 🟢 DO
-* Prefill any value the user already entered in the same process, or provide an explicit "same as previous" checkbox/selector (SC 3.3.7). Exceptions: re-entry that is essential for security (e.g. password confirmation) or data that is no longer valid.
+* Prefill any value the user already entered in the same process, or provide an explicit "same as previous" checkbox/selector (SC 3.3.7). Exceptions: re-entry that is essential (including security confirmations such as re-typing a password) or data that is no longer valid.
 * Pair every drag interaction with a single-pointer equivalent: up/down buttons for reordering, a "Move to…" menu, click-to-select then click-to-place, or a numeric input beside a slider (SC 2.5.7).
 * Whenever a sticky/fixed element overlays scrollable content, set `scroll-margin-top` (and `scroll-padding-top` on the scroll container) at least equal to the sticky element's height on all focusable elements, so keyboard focus always scrolls into fully visible view. This full-visibility requirement is a deliberate above-AA standard: SC 2.4.11 Focus Not Obscured (Minimum) at level AA only forbids the focused element being entirely hidden.
-* Render the help entry point (help link, contact, FAQ, chat trigger) in the identical position and relative order in the persistent layout shell on every page (SC 3.2.6).
+* Render the help entry point (help link, contact, FAQ, chat trigger) in the identical position in the persistent layout shell on every page (SC 3.2.6). Identical position is a deliberate above-AA standard: SC 3.2.6 Consistent Help only requires the same relative order across pages.
 
 ### 🔴 DON'T → INSTEAD
 * **Don't:** force the user to re-type data already provided in the same session flow (e.g. a billing address after a shipping address). **Instead:** auto-copy it and offer a checked-by-default "Billing same as shipping" checkbox that expands editable fields on demand.

@@ -4,7 +4,7 @@ title: Rule Name
 category: cognition | behavior | gestalt | interaction | robustness | data | a11y | content
 severity: mandatory | recommended
 triggers: [forms, tables, navigation, onboarding, dashboards]
-version: "5.0"
+version: "5.3"
 status: active
 ---
 

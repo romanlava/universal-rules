@@ -18,7 +18,7 @@ rules/
   00_META_FRAMEWORK.md    ← format and principles of the rule base
   _TEMPLATE.md            ← template for new rules
   cognition/              ← cognitive load, memory, choice
-  behavior/               ← behavioral economics (loss aversion, goal-gradient, Pareto…)
+  behavior/               ← behavioral economics (loss aversion, goal-gradient, Occam's razor…)
   gestalt/                ← perception laws (similarity, closure, isolation…)
   interaction/            ← interaction patterns (errors, status, exits, accelerators)
   robustness/             ← resilience (Postel, Doherty, Tesler)

@@ -110,10 +110,20 @@ The options are compatible: start with B and move to A later without changing th
 
 ## Release checklist (maintainer)
 
-1. Edit rules → update CHANGELOG.md (SemVer).
-2. Bump `version` in `.claude-plugin/plugin.json` in lockstep.
-3. Commit + push.
-4. In consuming projects: `git submodule update --remote design-rules` (Option A) or
+1. Edit the rule files.
+2. Set the `version` field in the front-matter of every rule you touched to the release
+   version (e.g. `version: "5.3"`), so a rule's own header states which release it last
+   changed in.
+3. Update `INDEX.md` if rules were added, renamed, or deprecated. A new rule without an
+   index row can never be loaded under two-level loading; a deprecated rule left in the
+   index keeps being loaded. Deprecated rules are excluded from the index but never
+   deleted from `rules/`. Verify every link in the index resolves before committing.
+4. Update `CHANGELOG.md` (SemVer): new rules and behavioral changes to existing rules
+   are minor; a corrected directive that reverses previous guidance belongs in the notes
+   even when the version bump is small.
+5. Bump `version` in `.claude-plugin/plugin.json` in lockstep with the changelog entry.
+6. Commit + push.
+7. In consuming projects: `git submodule update --remote design-rules` (Option A) or
    plugin update (Option C); Option B needs nothing.
 
 ## Separation rule

@@ -4,7 +4,7 @@ title: Progressive Disclosure
 category: cognition
 severity: mandatory
 triggers: [settings, configurators, dashboards, filters, forms, wizards, advanced-options]
-version: "5.1"
+version: "5.3"
 status: active
 ---
 
@@ -23,7 +23,7 @@ Settings and configuration screens, complex configurators, analytics dashboards 
 
 ## Directives
 ### 🟢 DO
-* Show only the 5–7 parameters critical to the primary task on the default view (e.g. status, primary identifier, the main action).
+* Show only the 5–7 parameters critical to the primary task on the default view (option cap: see UX-MILL-01) — e.g. status, primary identifier, the main action.
 * Place advanced settings behind a clearly labeled "Advanced" accordion, toggle, or secondary tab that reveals them on demand.
 * Order disclosure by frequency of use: common first and visible, rare last and collapsed.
 * Keep hidden options discoverable: the disclosure control must be visible, labeled, and indicate that more exists (chevron, count badge).

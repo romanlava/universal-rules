@@ -31,7 +31,8 @@ rule base, not improvised.
 
 * Never load the entire rule base into context — the index plus selected rules only.
 * When rules conflict, use the resolutions and the context rubric in
-  `rules/00_META_FRAMEWORK.md` ("Known Law Conflicts").
+  `${CLAUDE_PLUGIN_ROOT}/rules/00_META_FRAMEWORK.md` (or `rules/00_META_FRAMEWORK.md` at
+  the rule-base root) — see "Known Law Conflicts".
 * Every behavioral lever must pass the meta-framework's Ethical Gate: it serves the
   user's goal, never extracts behavior against their interest.
 * Project-specific conventions (brand colors, component library, domain terms) come from
