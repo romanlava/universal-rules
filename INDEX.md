@@ -72,4 +72,5 @@ Format spec and conflict resolutions live in [rules/00_META_FRAMEWORK.md](rules/
 | Rule | Apply when |
 |---|---|
 | [UX-COGA-01](rules/content/UX-COGA-01-clear-language.md) — Clear Language | All copy, consent dialogs, notifications, live feeds, animations — direct affirmative statements; no auto-refreshing layout shifts during critical tasks; all motion user-controllable |
+| [UX-I18N-01](rules/content/UX-I18N-01-internationalization.md) — Internationalization Resilience | Any user-facing string, label, button, table header, or rendering of dates/numbers/currency — elastic containers for longer translations, whole-sentence translatable strings, locale-driven plurals and formats, logical properties for either direction |
 | [UX-VOICE-01](rules/content/UX-VOICE-01-content-design.md) — Content Design | All UI text (labels, buttons, errors, empty states, mockups) — realistic content over placeholder gibberish, sentence case, verb-first action labels, plain language, one consistent name per object |

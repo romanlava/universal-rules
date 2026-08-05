@@ -1,5 +1,30 @@
 # Changelog
 
+## 5.2.0 — 2026-08-05
+
+Internationalization coverage: the rule base no longer assumes the source language is
+the only locale.
+
+* **New rule:** UX-I18N-01 (Internationalization Resilience, content, mandatory) —
+  text expansion budgeted by source length (running text ~30%, short UI labels
+  200–300% of the original), one whole sentence per translatable string instead of
+  concatenated fragments, CLDR plural categories via ICU MessageFormat / `Intl.PluralRules`
+  instead of `n > 1` branches, locale-driven date/number/currency/name formatting,
+  logical properties with reading-direction-only icon mirroring for RTL, strings
+  externalized into resource files and kept as live text, `lang` on the document and on
+  foreign-language passages, endonym language labels instead of country flags.
+* **Cross-references added:** UX-VOICE-01 — sentence case is the source locale's
+  convention; translated casing follows the target language's orthography.
+  UX-ECON-04 — max-widths are caps, never fixed sizes measured against source-language
+  text; a capped label, button, or column must still absorb a much longer translation.
+* **Science precision:** expansion figures anchored to the inverse-length curve (W3C
+  "Text size in translation", citing IBM globalization guidance) rather than a flat 30%;
+  RTL mirroring scoped to reading-direction semantics, excluding direction-neutral,
+  physical-referent, media-playback and clock icons; `lang` markup stated with WCAG
+  3.1.2's proper-name / technical-term / loanword exceptions.
+* **Index:** UX-I18N-01 added to the Content section of INDEX.md (without an index row a
+  rule can never be loaded under two-level loading).
+
 ## 5.1.0 — 2026-07-31
 
 Full-system audit (5 independent reviewers) and consolidation; everything translated

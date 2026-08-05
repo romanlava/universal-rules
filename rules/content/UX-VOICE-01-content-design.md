@@ -4,7 +4,7 @@ title: Content Design & Microcopy
 category: content
 severity: mandatory
 triggers: [forms, buttons, labels, error-messages, empty-states, navigation, onboarding, mockups]
-version: "5.1"
+version: "5.2"
 status: active
 ---
 
@@ -25,6 +25,7 @@ Any generated copy: field labels, buttons, headings, menu items, empty states, e
 ### 🟢 DO
 * Generate realistic, domain-plausible text everywhere: real labels, plausible names, and values in their true expected formats and lengths, so layout is validated against production-like content.
 * Use sentence case for all labels, buttons, headings, and menu items: capitalize only the first word and proper nouns ("Save changes", "Payment method").
+* Sentence case is the convention of the source locale; in translation, casing follows the target language's own orthography (see UX-I18N-01).
 * Start every action label with a verb naming the outcome ("Save changes", "Send invites", "Delete file").
 * Write in the user's vocabulary: describe visible objects and outcomes in plain words; error text states what happened and what to do next.
 * Keep one term per object: choose a single name for each concept and reuse it verbatim in navigation, buttons, empty states, errors, and confirmations.

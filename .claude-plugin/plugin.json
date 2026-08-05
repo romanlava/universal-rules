@@ -1,6 +1,6 @@
 {
   "name": "universal-design-rules",
-  "version": "5.1.0",
+  "version": "5.2.0",
   "description": "Universal UX/UI architecture rules for AI-assisted design and development: cognitive psychology, gestalt, behavioral economics, robustness, WCAG 2.2 / COGA accessibility.",
   "author": { "name": "Roman Seregin" },
   "repository": "https://github.com/romanlava/universal-rules",

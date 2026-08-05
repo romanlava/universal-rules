@@ -4,7 +4,7 @@ title: Parkinson's Law
 category: behavior
 severity: mandatory
 triggers: [text-blocks, forms, dense-tables, dashboards, responsive-layouts, wide-screens, modals]
-version: "5.1"
+version: "5.2"
 status: active
 ---
 
@@ -25,6 +25,7 @@ Paragraphs and long-form text, form layouts, labels and helper text, modals and 
 ### 🟢 DO
 * Cap reading text at 45–75 characters per line, ~66 ideal (e.g. `max-width: 65ch`), regardless of viewport width.
 * Give every form a fixed content max-width; single-column fields sized to expected input length, never full-viewport inputs.
+* Caps are maximums, never fixed sizes measured against source-language text: every capped label, button, or column must still absorb a translation far longer than the source — short labels can reach 2–3x — without clipping (see UX-I18N-01).
 * Constrain page content in a centered max-width container; on ultra-wide screens spend surplus space on margins/whitespace, not on stretching elements.
 * Let tables grow only as wide as their data needs; when space remains, keep columns at natural width instead of distributing leftover space evenly.
 
