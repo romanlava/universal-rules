@@ -1,4 +1,4 @@
-# Meta-Framework: Universal Design & UX Rules (v5.4)
+# Meta-Framework: Universal Design & UX Rules (v5.5)
 
 ## Purpose
 This repository is the single source of truth for UX/UI and architectural rules applied by AI assistants (Claude Code and others) across all projects. The AI must act as a strict system architect, not improvise subjective design choices.
@@ -44,6 +44,8 @@ When rules collide, these resolutions apply:
 * **Constraint vs. Liberality**: constrain the *value space* where choices are finite — pickers, enums, steppers (UX-ERR-01); be liberal in *parsing* free-form input — normalize formats, never reject for formatting (UX-ROBUST-01). Constraint prevents invalid choices; liberality forgives valid-but-messy input.
 
 * **Wizard vs. decision panel**: decompose by task frequency — a rare or branching task becomes a wizard; a task people repeat daily becomes one decision per step, grouped with the facts it needs on one panel. The unit is one decision, not one field. See UX-LOAD-01 and UX-NEXT-01.
+
+* **Sufficiency vs. minimalism and disclosure**: subtraction (UX-ECON-03) and progressive disclosure (UX-PROG-01) apply only to what the current decision does not need. Every fact the decision needs stays visible, grouped by the action, even at the cost of density (UX-INFO-01); everything else is quietened before it is removed.
 
 **Unlisted conflicts** are resolved against context, in order: (1) who the user is (novice vs. expert), (2) how often the action happens (daily → speed; rare → guidance and guards), (3) cost of error (irreversible or expensive → prevention; trivial → speed, with undo carrying the safety), (4) reversibility (cheap undo can replace a confirmation entirely). State the tradeoff being made when generating.
 

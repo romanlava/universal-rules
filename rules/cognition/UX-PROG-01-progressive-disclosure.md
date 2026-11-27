@@ -4,7 +4,7 @@ title: Progressive Disclosure
 category: cognition
 severity: mandatory
 triggers: [settings, configurators, dashboards, filters, forms, wizards, advanced-options]
-version: "5.3"
+version: "5.5"
 status: active
 ---
 
@@ -30,7 +30,7 @@ Settings and configuration screens, complex configurators, analytics dashboards 
 
 ### 🔴 DON'T → INSTEAD
 * **Don't:** render every possible filter, field, and column on initial load. **Instead:** show the essential subset and collapse the rest under "Advanced" or "More filters (12)".
-* **Don't:** bury the *primary* action or required fields inside collapsed sections. **Instead:** keep everything needed to complete the main task visible by default; hide only optional depth.
+* **Don't:** bury the *primary* action or required fields inside collapsed sections. **Instead:** keep everything needed to complete the main task visible by default — including every fact the current decision needs (see UX-INFO-01); hide only optional depth.
 * **Don't:** scatter advanced options across multiple unlabeled expanders the user must hunt through. **Instead:** group them under one predictable, named disclosure point per screen area.
 * **Don't:** reset or lose values a user entered in a disclosed section when it collapses. **Instead:** persist the state and summarize it on the collapsed header ("3 filters active").
 

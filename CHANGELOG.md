@@ -1,5 +1,27 @@
 # Changelog
 
+## 5.5.0 — 2026-11-27
+
+The clear next step and decision-sufficient information, as research-backed rules. Evidence,
+strength ratings and open questions: `docs/research/2026-11-next-step-and-information-sufficiency.md`.
+
+* **UX-NEXT-01 broadened** from repeated task screens to every non-promotional screen where a
+  person chooses or acts. Each screen answers three questions — state, next step, consequence —
+  grounded in Norman's gulfs, feedforward (Vermeulen et al. 2013) and situation awareness
+  (Endsley). Outcome labels instead of mechanism labels; the operator-specific directives remain
+  for repeated task screens.
+* **New rule UX-INFO-01** (Decision-Sufficient Information, cognition, mandatory): show every fact
+  the current decision needs at once beside the action, within ~4 groups and ~10 seconds of
+  must-read text, each number with a comparison; quieten the rest; highlight only actionable
+  deviations; scale density to expertise. Grounded in the information-overload inverted U,
+  confidence–accuracy divergence, working-memory capacity, display grouping, and alert fatigue.
+* **New rule UX-VIZ-01** (Representation Fit, data, recommended): choose sentence, table, number
+  or chart by the task; compare quantities by position or length; no pies, area or 3D for
+  comparison. Grounded in cognitive fit and graphical-perception research, with its mixed
+  evidence stated.
+* **UX-PROG-01:** disclosure never defers a fact the current decision needs.
+* **Meta-framework:** new conflict resolution "Sufficiency vs. minimalism and disclosure".
+
 ## 5.4.0 — 2026-11-27
 
 Operator-screen findings from the companion UX skill's November "next step and noise"
