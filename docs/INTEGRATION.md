@@ -9,7 +9,13 @@ project's context; the AI reads full rules on demand.
 > key or an HTTPS personal access token. Without access, submodule clone and
 > marketplace add both fail.
 
-## Option A — Git submodule (recommended)
+> **Cloud sessions (Claude Code on the web) see only what is committed in the project.** They
+> clone the project repository and nothing else: there is no `~/.claude`, so personal skills are
+> absent, and git submodules are not reliably fetched — one consuming project's cloud session
+> reported `design-rules/` as an empty directory, so the rules silently never loaded. If a project
+> is used from the cloud, use **Option D**.
+
+## Option A — Git submodule (local and CI only)
 
 A versioned link: the project pins a specific commit of the rule base,
 updates are explicit and reversible. Works anywhere that has read access to the repo.
@@ -41,7 +47,7 @@ Cloning the project on a new machine: `git clone --recurse-submodules <crm-url>`
 (or `git submodule update --init` after a plain clone).
 
 **Pros:** the rules version is pinned in project history; can roll back; CI sees the rules.
-**Cons:** the usual submodule routine (remember `--recurse-submodules`).
+**Cons:** the usual submodule routine (remember `--recurse-submodules`); **empty in cloud sessions**.
 
 ## Option B — Absolute @import (quick start, single machine)
 
@@ -100,10 +106,34 @@ Notes:
 **Pros:** the most native way for Claude Code; the skill knows when to engage.
 **Cons:** updates require a version bump + plugin update; slightly more moving parts.
 
+## Option D — Vendored copy (works everywhere, including cloud sessions)
+
+The project commits a plain copy of `INDEX.md`, `rules/`, `docs/research/` and `CHANGELOG.md`
+under `design-rules/`, plus a `VENDORED.md` naming the source version. The CLAUDE.md block is the
+same as Option A. Sync it — and optionally the project's copies of skills — with:
+
+```bash
+scripts/sync-consumer.sh ~/Projects/CRM --skill ~/.claude/skills/ux-design
+```
+
+then review and commit in the project. Converting from Option A: remove the submodule first
+(`git submodule deinit -f design-rules && git rm -f design-rules`); the script refuses to write
+into a submodule.
+
+**Pros:** identical rules locally, in CI and in the cloud; version visible in `VENDORED.md` and in
+project history. **Cons:** an explicit sync step per update; never edit the copy in the project.
+
+**Skills in the cloud.** A personal skill in `~/.claude/skills` does not exist in a cloud session.
+Either commit a copy to the project's `.claude/skills/` (the `--skill` flag above), or upload it to
+claude.ai (Settings → Capabilities → Skills) so it loads into cloud sessions of every project:
+`scripts/build-skill-zip.sh <skill-dir> dist` builds the zip. Locally, a personal skill overrides a
+project skill of the same name; keep both copies identical to avoid surprises.
+
 ## Which to choose
 
 * Solo development on one machine, want instant updates → **B**.
 * Project lives in CI, multiple machines, or a team → **A**.
+* Project is also worked on from cloud sessions → **D**.
 * Many projects and you want auto-activation without editing each CLAUDE.md → **C**.
 
 The options are compatible: start with B and move to A later without changing the base.
