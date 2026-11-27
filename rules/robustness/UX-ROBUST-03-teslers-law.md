@@ -4,7 +4,7 @@ title: Tesler's Law (Conservation of Complexity)
 category: robustness
 severity: mandatory
 triggers: [forms, wizards, settings, onboarding, checkout, import, configuration]
-version: "5.1"
+version: "5.4"
 status: active
 ---
 
@@ -29,11 +29,14 @@ Every process carries an irreducible amount of complexity that cannot be removed
 * Parse pasted composite input automatically: split a pasted full address, full name, or ID string into its target fields; extract structure from free text instead of demanding field-by-field entry.
 * Derive everything derivable: compute totals, look up values from an entered code or identifier, infer dependent fields.
 * Ask the user only for what the system genuinely cannot know or derive — and phrase that as the small residue it is.
+* Show every prefilled or derived value where the user can see and change it (one "Change" per value); a computed default is a proposal the user confirms, not a silent write.
 * Never re-ask for data already provided in the same flow — prefill it or offer a same-as-previous control (see UX-A11Y-02).
 
 ### 🔴 DON'T → INSTEAD
 * **Don't:** present a wall of empty fields when most values are known, derivable, or predictable. **Instead:** prefill with smart defaults and reduce the visible ask to the few fields only the user can answer.
 * **Don't:** reject or ignore pasted composite input and demand the user distribute it across fields by hand. **Instead:** parse the pasted string client-side, populate the target fields, and let the user verify and correct.
+
+* **Don't:** silently record a value or a completed check the user never saw or confirmed. **Instead:** display it as a visible, changeable proposal and record it only on confirmation.
 
 ## Example
 ❌ `10 empty fields: country, currency, date format, address line 1, line 2, city, region, postal code… all typed manually`

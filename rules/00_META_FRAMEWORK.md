@@ -1,4 +1,4 @@
-# Meta-Framework: Universal Design & UX Rules (v5.3)
+# Meta-Framework: Universal Design & UX Rules (v5.4)
 
 ## Purpose
 This repository is the single source of truth for UX/UI and architectural rules applied by AI assistants (Claude Code and others) across all projects. The AI must act as a strict system architect, not improvise subjective design choices.
@@ -42,6 +42,8 @@ When rules collide, these resolutions apply:
 * **Confirmation vs. Undo**: for reversible actions prefer no blocking dialog — soft delete plus one-click Undo (UX-CTRL-01); show a loss-naming confirmation only when the action is irreversible or the loss substantial; whenever a dialog exists, UX-KAHN-02's copy rules govern it.
 * **Blocked action vs. pending action**: invalid data never disables a control — the submit stays enabled and focusable, and activation blocks, moves focus, and announces (UX-ERR-01). The one legitimate lock is an in-flight operation, expressed as `aria-disabled` plus a stage-naming label so the control keeps focus (UX-STAT-01, UX-ROBUST-02).
 * **Constraint vs. Liberality**: constrain the *value space* where choices are finite — pickers, enums, steppers (UX-ERR-01); be liberal in *parsing* free-form input — normalize formats, never reject for formatting (UX-ROBUST-01). Constraint prevents invalid choices; liberality forgives valid-but-messy input.
+
+* **Wizard vs. decision panel**: decompose by task frequency — a rare or branching task becomes a wizard; a task people repeat daily becomes one decision per step, grouped with the facts it needs on one panel. The unit is one decision, not one field. See UX-LOAD-01 and UX-NEXT-01.
 
 **Unlisted conflicts** are resolved against context, in order: (1) who the user is (novice vs. expert), (2) how often the action happens (daily → speed; rare → guidance and guards), (3) cost of error (irreversible or expensive → prevention; trivial → speed, with undo carrying the safety), (4) reversibility (cheap undo can replace a confirmation entirely). State the tradeoff being made when generating.
 

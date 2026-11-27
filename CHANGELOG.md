@@ -1,5 +1,24 @@
 # Changelog
 
+## 5.4.0 — 2026-11-27
+
+Operator-screen findings from the companion UX skill's November "next step and noise"
+method, brought into the law layer.
+
+* **New rule:** UX-NEXT-01 (One Clear Next Step, interaction, mandatory) — task screens
+  used repeatedly show exactly one next step per state with its reason and consequence;
+  ask about observable facts and derive system states; one computation feeds every surface;
+  the reason and a manual alternative stay visible (automation bias); work lists open on
+  "needs action" and color only states that require a response; after saving, the next
+  item opens; one real-world event is one save.
+* **Corrected guidance:** UX-LOAD-01 no longer mandates a wizard for every complex form.
+  Decomposition is sized by task frequency — a wizard for rare or branching tasks, one
+  decision panel per step for tasks repeated daily. The previous unconditional wording
+  pushed daily operator work into field-per-screen wizards.
+* **UX-ROBUST-03:** prefilled and derived values are visible, changeable proposals; nothing
+  the user never saw or confirmed is recorded silently.
+* **Meta-framework:** new conflict resolution "Wizard vs. decision panel".
+
 ## 5.3.0 — 2026-08-05
 
 Audit of what the v5.1 consolidation cost, the accessibility scope it overstated, and
