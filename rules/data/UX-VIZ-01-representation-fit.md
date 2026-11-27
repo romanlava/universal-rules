@@ -4,7 +4,7 @@ title: Representation Fit (Table, Chart, Number, or Sentence)
 category: data
 severity: recommended
 triggers: [dashboards, reports, metrics, kpi, charts, tables, detail-views, summaries]
-version: "5.5"
+version: "5.6"
 status: active
 ---
 
@@ -15,7 +15,7 @@ Choose how to show data from the task the person performs with it, not from what
 
 ## Scientific Foundation
 * **Theory:** Cognitive fit (representation matched to task type); graphical-perception accuracy ranking of visual encodings; icon–label comprehension; "compared to what?". Evidence and its limits: `docs/research/2026-11-next-step-and-information-sufficiency.md` §4.
-* **Key Authors:** Iris Vessey & Dennis Galletta (1991); William Cleveland & Robert McGill (1984), replicated by Heer & Bostock (2010); Susan Wiedenbeck (1999); Edward Tufte (1990).
+* **Key Authors:** Iris Vessey & Dennis Galletta (1991); William Cleveland & Robert McGill (1984), replicated by Heer & Bostock (2010); Susan Wiedenbeck (1999); Edward Tufte (1990); Gigerenzer & Hoffrage (1995) and Galesic, Garcia-Retamero & Gigerenzer (2009) on risk formats.
 * **Core Concept:** Tables serve tasks needing precise values; graphs serve tasks needing comparison, trend, or pattern. Quantities are judged most accurately by position on a common scale, then length, and worst by angle, area, volume, or color saturation. Cognitive-fit evidence is mixed and people often prefer tables, so a table or sentence is the safe default when the task is unclear.
 
 ## Triggers
@@ -28,6 +28,7 @@ Any time data is about to be rendered: dashboards, KPI rows, reports, summary pa
 * Encode quantities that must be compared by position or length (bars, dots, lines) on a shared, labeled scale.
 * Pair status color with text and, if used, an icon; icons alone fail first-time users (see UX-A11Y-01).
 * Put the reference in the representation itself — target line, previous-period mark, threshold band (see UX-INFO-01).
+* State risks and probabilities as natural frequencies ("3 in 100") rather than percentages alone, and add an icon array where the audience's numeracy is mixed.
 
 ### 🔴 DON'T → INSTEAD
 * **Don't:** chart a value the person only needs to read or act on. **Instead:** state it in text or a table cell.

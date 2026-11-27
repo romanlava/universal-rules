@@ -1,4 +1,4 @@
-# Meta-Framework: Universal Design & UX Rules (v5.5)
+# Meta-Framework: Universal Design & UX Rules (v5.6)
 
 ## Purpose
 This repository is the single source of truth for UX/UI and architectural rules applied by AI assistants (Claude Code and others) across all projects. The AI must act as a strict system architect, not improvise subjective design choices.
@@ -51,6 +51,9 @@ When rules collide, these resolutions apply:
 
 ## Ethical Gate (applies to every behavioral lever)
 Before generating any psychological lever — loss framing, endowed progress, scarcity, defaults, social proof — apply one test: *does it leave the user genuinely better off, or extract behavior against their interest?* The latter is a deceptive pattern and is never generated: no fake scarcity, fabricated urgency, fake progress, or self-serving defaults.
+
+## Evidence Hygiene
+Rules cite findings by their strength, and some popular findings are excluded: ego depletion (failed multi-lab replication), decision fatigue from the "hungry judges" study (likely a scheduling artifact), the Zeigarnik memory advantage (weak replication), choice overload as a universal law (moderated, near-zero mean), and headline nudge effect sizes (inflated by publication bias). Behavioral levers are framed as structure first, measured always (see UX-CHOICE-01). Rationale and sources: `docs/research/2026-11-behavioral-psychology.md`.
 
 ## Resolved Format Decisions
 * Rules deliberately use Markdown sections and ONE compact ❌/✅ example instead of the research-recommended per-rule XML blocks, multi-example few-shot sets, and ASCII token schemas — high-levelness and context economy win. XML wrapping applies only at prompt-assembly time (see Two-Level Loading). Future audits should not re-flag this.

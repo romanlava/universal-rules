@@ -1,5 +1,25 @@
 # Changelog
 
+## 5.6.0 — 2026-11-27
+
+Behavioral psychology applied to the next step and the decision screen. Evidence, strength
+ratings and rejected claims: `docs/research/2026-11-behavioral-psychology.md`.
+
+* **New rule UX-CHOICE-01** (Structure over Persuasion, behavior, mandatory): remove, pre-fill or
+  perform steps instead of explaining them; state the next step as a concrete what + whom + when
+  (implementation intentions); specific prompts at the moment of action; full consequence and
+  cost at the decision point (salience); friction only for harm; measure every behavioral change.
+  Grounded in the H&R Block field experiment, the decision-structure finding of Mertens et al.,
+  Gollwitzer & Sheeran, Karlan et al. and Chetty et al., with nudge effect sizes corrected by
+  DellaVigna & Linos and Maier et al.
+* **UX-INFO-01:** hard-to-evaluate numbers get an evaluative label, "better" keeps one direction,
+  and unimportant numbers are treated as costly (Hsee's evaluability; Peters et al. "less is more").
+* **UX-VIZ-01:** risks and probabilities as natural frequencies, with icon arrays for mixed
+  numeracy (Gigerenzer & Hoffrage; Galesic et al.).
+* **Meta-framework:** new "Evidence Hygiene" section listing findings the base does not rely on
+  (ego depletion, hungry-judge decision fatigue, Zeigarnik memory, universal choice overload,
+  headline nudge effects).
+
 ## 5.5.0 — 2026-11-27
 
 The clear next step and decision-sufficient information, as research-backed rules. Evidence,
